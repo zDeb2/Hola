@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Among Us</title>
+    <style>
+        #amongUsImage {
+            transition: filter 0.1s; /* Transición suave del cambio de matiz */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Among Us</h1>
+
+<!-- Imagen de Among Us -->
+<img id="amongUsImage" src="https://static.wikia.nocookie.net/amongus/images/d/da/Among_Us_Logo.png/revision/latest?cb=20231211001930&path-prefix=es">
+
+<script>
+    const imagen = document.getElementById('amongUsImage');
+
+    setInterval(() => {
+        const min = 0;
+        const max = 360; // Valor máximo para el matiz en grados
+
+        // Generar un número aleatorio entre min y max
+        const randomHue = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        // Aplicar el cambio de matiz a la imagen
+        imagen.style.filter = `hue-rotate(${randomHue}deg)`;
+    }, 100); // Cambiar cada 0.1 segundos (100 milisegundos)
+</script>
+
+</body>
+</html>
